@@ -3,6 +3,7 @@
 > gulp plugin to include the contents of angular templates inside directive's code
 
 ----
+*NOTE: Forked to add support for angular-ui-grid cellTemplates
 
 Plugin searches for `templateUrl: {template url}` and replace it with `template: {minified template content}`. To archive this template first minified with [minimize](https://www.npmjs.com/package/minimize)
 
