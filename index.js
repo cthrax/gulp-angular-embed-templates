@@ -4,6 +4,7 @@ var PluginError = gutil.PluginError;
 
 var ProcessorEngine = require('./lib/ProcessorEngine');
 var Angular1Processor = require('./lib/Angular1Processor');
+var AngularUiGridProcessor = require('./lib/AngularUiGridProcessor');
 var Angular2TypeScriptTemplateProcessor = require('./lib/Angular2TypeScriptProcessor');
 var utils = require('./lib/utils');
 
@@ -16,11 +17,11 @@ module.exports = function (options) {
     delete options.sourceType;
     switch (sourceType) {
         case 'ts':
-            options.processors = [new Angular1Processor(), new Angular2TypeScriptTemplateProcessor()];
+            options.processors = [new Angular1Processor(), new AngularUiGridProcessor(), new Angular2TypeScriptTemplateProcessor()];
             break;
         case 'js':
         default:
-            options.processors = [new Angular1Processor()];
+            options.processors = [new Angular1Processor(), new AngularUiGridProcessor()];
     }
 
     var logger = options.logger = utils.createLogger();

@@ -162,6 +162,10 @@ describe('gulp-angular-embed-templates', function () {
         testEmbed('hello-world', done);
     });
 
+    it('should embed hello-world template for angular-ui-grid cellTemplate', function (done) {
+        testEmbed('angular-ui-grid', done);
+    });
+
     it('should embed Angular 2.0 templates with <a [router-link]="[\'/search\']">Search</a>', function (done) {
         testEmbed('angular2-typescript', done, {sourceType: 'ts'});
     });
